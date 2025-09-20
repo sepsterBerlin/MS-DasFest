@@ -159,6 +159,8 @@ function parseCSV(text: string): string[][] {
     .map((row) => row.split(",").map((c) => c.trim()));
 }
 
+
+
 // ---------- Seed Data ----------
 
 type DB = {
@@ -201,12 +203,37 @@ const seedDB = (): DB => ({
     },
   ],
   venues: [
-    { venueId: "VENUA", name: "Hauptbühne", address: "Berlin Mitte", capacity: 200 },
-    { venueId: "VENUB", name: "Kleiner Saal", address: "Berlin Kreuzberg", capacity: 250 },
+    {
+    venueId: "VEN-CCB",
+    name: "Comedy Café Berlin",
+    address: "Roseggerstr. 17, Berlin",
+    capacity: 60,   // estimate or leave blank
+    contact: "",
+    phone: "",
+    notes: "Main venue"
+  },
+  {
+    venueId: "VEN-IDAN",
+    name: "Ida Nowhere",
+    address: "Donaustr. 79, Berlin",
+    capacity: 30,  // estimate or blank
+    contact: "",
+    phone: "",
+    notes: "Partner venue"
+  },
+  {
+    venueId: "VEN‑CCBS",
+    name: "CCB Studios",
+    address: "Hasenheide 12, Berlin",
+    capacity: 50,
+    contact: "",
+    phone: "",
+    notes: "Workshop space"
+  }
   ],
   persons: [
-    { pid: "P0001", role: "PERF", first: "Alex", last: "M.", team: "All-Stars", lang: "EN" },
-    { pid: "P0002", role: "VOL", first: "Mira", last: "K.", phone: "+49…", lang: "DE" },
+    { pid: "P0001", role: "TECH", first: "Josh", last: "Telson", team: "Smash Cut", lang: "EN" },
+    { pid: "P0002", role: "SANDWICH", first: "Noah", last: "Telson", team: "Toasty" , phone: "911", lang: "DE" },
   ],
   shifts: [
     { shiftId: "SH001", venueId: "VENUA", date: "2025-10-16", start: "17:30", end: "22:00", role: "FOH", cap: 4 },
